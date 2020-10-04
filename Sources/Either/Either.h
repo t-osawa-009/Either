@@ -1,10 +1,3 @@
-//
-//  Either.h
-//  Either
-//
-//  Created by Takuya Ohsawa on 2020/10/04.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for Either.

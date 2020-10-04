@@ -10,6 +10,7 @@
 		17D0D56C25299E200031BEBE /* Either.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D0D56225299E200031BEBE /* Either.framework */; };
 		17D0D57125299E200031BEBE /* EitherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0D57025299E200031BEBE /* EitherTests.swift */; };
 		17D0D57325299E200031BEBE /* Either.h in Headers */ = {isa = PBXBuildFile; fileRef = 17D0D56525299E200031BEBE /* Either.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17D0D58525299EDA0031BEBE /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0D58425299EDA0031BEBE /* Either.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		17D0D56B25299E200031BEBE /* EitherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EitherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D0D57025299E200031BEBE /* EitherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EitherTests.swift; sourceTree = "<group>"; };
 		17D0D57225299E200031BEBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D0D58425299EDA0031BEBE /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +55,8 @@
 		17D0D55825299E200031BEBE = {
 			isa = PBXGroup;
 			children = (
-				17D0D56425299E200031BEBE /* Either */,
-				17D0D56F25299E200031BEBE /* EitherTests */,
+				17D0D56425299E200031BEBE /* Sources */,
+				17D0D56F25299E200031BEBE /* Tests */,
 				17D0D56325299E200031BEBE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,16 +70,33 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17D0D56425299E200031BEBE /* Either */ = {
+		17D0D56425299E200031BEBE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				17D0D57E25299E550031BEBE /* Either */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		17D0D56F25299E200031BEBE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				17D0D57F25299E7C0031BEBE /* EitherTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		17D0D57E25299E550031BEBE /* Either */ = {
 			isa = PBXGroup;
 			children = (
 				17D0D56525299E200031BEBE /* Either.h */,
 				17D0D56625299E200031BEBE /* Info.plist */,
+				17D0D58425299EDA0031BEBE /* Either.swift */,
 			);
 			path = Either;
 			sourceTree = "<group>";
 		};
-		17D0D56F25299E200031BEBE /* EitherTests */ = {
+		17D0D57F25299E7C0031BEBE /* EitherTests */ = {
 			isa = PBXGroup;
 			children = (
 				17D0D57025299E200031BEBE /* EitherTests.swift */,
@@ -147,6 +166,7 @@
 				TargetAttributes = {
 					17D0D56125299E200031BEBE = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 					17D0D56A25299E200031BEBE = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -194,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D0D58525299EDA0031BEBE /* Either.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,14 +362,16 @@
 		17D0D57725299E200031BEBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = ZUBT77449H;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Either/Info.plist;
+				INFOPLIST_FILE = Sources/Either/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,6 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "app.t-osawa-009.Either";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,14 +389,16 @@
 		17D0D57825299E200031BEBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = ZUBT77449H;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Either/Info.plist;
+				INFOPLIST_FILE = Sources/Either/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,9 +415,10 @@
 		17D0D57A25299E200031BEBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZUBT77449H;
-				INFOPLIST_FILE = EitherTests/Info.plist;
+				INFOPLIST_FILE = Tests/EitherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,9 +434,10 @@
 		17D0D57B25299E200031BEBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZUBT77449H;
-				INFOPLIST_FILE = EitherTests/Info.plist;
+				INFOPLIST_FILE = Tests/EitherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
